@@ -1,6 +1,6 @@
 package by.epamtc.task01.controller;
 
-import by.epamtc.task01.model.CoordinatesAB;
+import by.epamtc.task01.model.PointCoordinate;
 import by.epamtc.task01.model.TangentFunction;
 import by.epamtc.task01.model.YearCalendar;
 import by.epamtc.task01.scaner.Scan;
@@ -21,19 +21,19 @@ public class InputController {
         return tangentFunction;
     }
 
-    public CoordinatesAB inputPointABCoordinates(){
-        CoordinatesAB coordinatesAB = new CoordinatesAB();
+    public List<PointCoordinate> inputPointCoordinate(int numberOfPoints){
+        PointCoordinate pointCoordinate = new PointCoordinate();
+        List<PointCoordinate> pointCoordinates = new ArrayList<>();
 
-        System.out.print("A:\nx1 > ");
-        coordinatesAB.setX1(input().intReadFromConsole());
-        System.out.print("y1 > ");
-        coordinatesAB.setY1(input().intReadFromConsole());
-        System.out.print("B:\nx2 > ");
-        coordinatesAB.setX2(input().intReadFromConsole());
-        System.out.print("y2 > ");
-        coordinatesAB.setY2(input().intReadFromConsole());
+        for(int i = numberOfPoints; i <= 132; i++){
+            System.out.println(i + ":\nx > ");
+            pointCoordinate.setX(input().intReadFromConsole());
+            System.out.print("y > ");
+            pointCoordinate.setY(input().intReadFromConsole());
+            pointCoordinates.add(pointCoordinate);
+        }
 
-        return coordinatesAB;
+        return pointCoordinates;
     }
 
     public int inputRadiusValue(){

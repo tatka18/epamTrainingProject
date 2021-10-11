@@ -3,7 +3,6 @@ package by.epamtc.task01.scaner;
 import java.util.Scanner;
 
 public class Scan {
-
     public int intReadFromConsole(){
         Scanner scanner = new Scanner(System.in);
        while (!scanner.hasNextInt()){
@@ -12,7 +11,6 @@ public class Scan {
             scanner.hasNextInt();
         }
         return scanner.nextInt();
-
     }
 
     public double doubleReadFromConsole(){

@@ -1,19 +1,11 @@
 package by.epamtc.task01.model;
 
-import java.util.Objects;
-
 public class YearCalendar {
     private int year;
     private int month;
-    private int days;
+    private int numberOfDays;
 
     public YearCalendar() {
-    }
-
-    public YearCalendar(int year, int month, int days) {
-        this.year = year;
-        this.month = month;
-        this.days = days;
     }
 
     public int getYear() {
@@ -32,12 +24,12 @@ public class YearCalendar {
         this.month = month;
     }
 
-    public int getDays() {
-        return days;
+    public int getNumberOfDays() {
+        return numberOfDays;
     }
 
-    public void setDays(int days) {
-        this.days = days;
+    public void setNumberOfDays(int numberOfDays) {
+        this.numberOfDays = numberOfDays;
     }
 
     @Override
@@ -47,18 +39,24 @@ public class YearCalendar {
         YearCalendar calendar = (YearCalendar) o;
         return year == calendar.year &&
                 month == calendar.month &&
-                days == calendar.days;
+                numberOfDays == calendar.numberOfDays;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(year, month, days);
+        int prime = 1;
+        int result = 31;
+        result = prime * result + year;
+        result = prime * result + month;
+        result = prime * result + numberOfDays;
+        return result;
     }
 
     @Override
     public String toString() {
-        return "year: " + year +
+        return getClass().getSimpleName() +
+                " year: " + year +
                 ", month: " + month +
-                ", days: " + days;
+                ", numberOfDays: " + numberOfDays;
     }
 }

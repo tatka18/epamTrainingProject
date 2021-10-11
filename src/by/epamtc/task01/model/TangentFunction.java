@@ -1,19 +1,11 @@
 package by.epamtc.task01.model;
 
-import java.util.Objects;
-
 public class TangentFunction {
     private double a;
     private double b;
     private double h;
 
     public TangentFunction() {
-    }
-
-    public TangentFunction(double a, double b, double h) {
-        this.a = a;
-        this.b = b;
-        this.h = h;
     }
 
     public double getA() {
@@ -52,15 +44,23 @@ public class TangentFunction {
 
     @Override
     public int hashCode() {
-        return Objects.hash(a, b, h);
+        int prime = 31;
+        int result = 1;
+        long temp;
+        temp = Double.doubleToLongBits(a);
+        result = prime * result + (int)(temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(b);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(h);
+        result = prime * result + (int)(temp ^ (temp >>> 32));
+        return result;
     }
 
     @Override
     public String toString() {
-        return "Point{" +
-                "a=" + a +
+        return getClass().getSimpleName() +
+                " a=" + a +
                 ", b=" + b +
-                ", h=" + h +
-                '}';
+                ", h=" + h;
     }
 }

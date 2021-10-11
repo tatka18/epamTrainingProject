@@ -1,7 +1,5 @@
 package by.epamtc.task01.model;
 
-import java.util.Objects;
-
 public class Day {
     private int hour;
     private int minute;
@@ -52,12 +50,18 @@ public class Day {
 
     @Override
     public int hashCode() {
-        return Objects.hash(hour, minute, second);
+        int prime = 1;
+        int result = 31;
+        result = prime * result + minute;
+        result = prime * result + second;
+        result = prime * result + hour;
+        return result;
     }
 
     @Override
     public String toString() {
-        return hour + "h " +
+        return getClass().getSimpleName() +
+                hour + "h " +
                 minute + "min " +
                 + second + "sec";
     }
